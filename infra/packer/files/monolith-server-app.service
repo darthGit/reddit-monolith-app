@@ -1,0 +1,13 @@
+[Unit]
+Description=Puma server service for monolith app
+After=network.target
+
+[Service]
+User=appuser
+Group=appuser
+WorkingDirectory=/home/appuser/reddit
+Environment="PATH=/home/appuser/.rvm/rubies/ruby-2.4.1/bin" 
+ExecStart=/home/appuser/.rvm/rubies/ruby-2.4.1/bin/puma
+
+[Install]
+WantedBy=multi-user.target
