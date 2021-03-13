@@ -1,6 +1,6 @@
 {
     "variables": {
-        "proj_id": "devops-practice-290209",
+        "proj_id": "infra-301318",
         "machine_type": "f1-micro",
         "source_image": "ubuntu-1604-xenial-v20201210"
     },
