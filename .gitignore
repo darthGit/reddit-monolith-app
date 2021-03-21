@@ -1,2 +1,7 @@
 *log
-/infra/terraforrem/graph.png
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+*.tf.old
+.terraform/
