@@ -1,0 +1,25 @@
+{
+    "variables": {
+        "proj_id": "infra-301318",
+        "machine_type": "f1-micro",
+        "source_image": "ubuntu-1604-xenial-v20201210"
+    },
+    "builders": [
+        {
+            "type": "googlecompute",
+            "project_id": "{{user `proj_id`}}",
+            "image_name": "reddit-db-base-{{timestamp}}",
+            "source_image": "{{user `source_image`}}",
+            "zone": "europe-west1-b",
+            "ssh_username": "appuser",
+            "machine_type": "{{user `machine_type`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}
